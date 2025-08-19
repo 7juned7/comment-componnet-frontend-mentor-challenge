@@ -15,7 +15,7 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <div className="bg-gray-200 min-h-screen w-full flex justify-center items-start p-6">
+    <div className="bg-gray-100 min-h-full w-full flex justify-center items-start py-18 p-6">
       <div className="w-full max-w-4xl flex flex-col gap-6">
         {comments.map((comment) => (
           <div key={comment.id}>

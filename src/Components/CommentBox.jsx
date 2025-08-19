@@ -21,7 +21,7 @@ const dispatch = useDispatch();
   };
   return (
     <div className="w-full">
-      <div className="flex flex-col md:flex-row gap-4 bg-white p-4 rounded-xl shadow-md w-full">
+      <div className="flex flex-col md:flex-row gap-4 bg-white p-4 pt-8 rounded-xl  w-full">
         {!isEditing && (
 
 <div className="hidden md:block">
@@ -42,15 +42,8 @@ const dispatch = useDispatch();
             {isOwnComment && (
               <div className="ml-auto flex  gap-2 text-sm text-gray-500">
                 <button
-                  onClick={() => setIsEditing(!isEditing)}
-                  className=" flex text-center gap-1 justify-center items-center hover:text-blue-500 text-blue-400 cursor-pointer"
-                >
-                  <Edit2 width={16}/>
-                  Edit
-                </button>
-                 <button
                   onClick={() => handleDelete()}
-                  className="flex  text-center items-center gap-1 justify-center hover:text-red-500 text-red-400 cursor-pointer"
+                  className="flex  text-center items-center gap-1 justify-center hover:text-red-500 text-red-600 font-bold cursor-pointer"
                 >
                   
 
@@ -58,6 +51,14 @@ const dispatch = useDispatch();
                   Delete
                  
                 </button>
+                <button
+                  onClick={() => setIsEditing(!isEditing)}
+                  className=" flex text-center gap-1 justify-center items-center hover:text-blue-500 text-blue-800 font-bold cursor-pointer"
+                >
+                  <Edit2 width={16}/>
+                  Edit
+                </button>
+                 
               </div>
               
             )}
@@ -88,7 +89,7 @@ const dispatch = useDispatch();
           ) : (
             <p className="mt-2 text-gray-700">
               {comment.replyingTo && (
-                <span className="text-blue-600 font-bold mr-1">
+                <span className="text-blue-800 font-bold mr-1">
                   @{comment.replyingTo}
                 </span>
               )}
